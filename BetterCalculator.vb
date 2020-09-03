@@ -1,11 +1,13 @@
 ﻿Option Strict On
 Option Explicit On
 Option Compare Text
+
 'Lane Coleman
 'RCET0265
 'Fall 2020
 'Simple Calculator
-'
+'https://github.com/colelane/BetterCalculatorLC.git
+
 Module BetterCalculator
 
     Sub Main()
@@ -14,6 +16,7 @@ Module BetterCalculator
         Dim goodData As Boolean
 
         Do
+            Console.WriteLine("Enter q at any time to exit" & vbNewLine)
             Do
                 Try
                     Console.WriteLine("Give me a number")
@@ -24,6 +27,7 @@ Module BetterCalculator
                     secondNumber = CInt(secondInput)
                     goodData = True
                 Catch ex As Exception
+                    If firstInput = "q" Or secondInput = "q" Then Exit Sub
                     Console.WriteLine("I asked for a number! Try again.")
                     goodData = False
                 End Try
@@ -36,9 +40,11 @@ Module BetterCalculator
                                   "3.multiply" & vbNewLine &
                                   "4.divide" & vbNewLine)
                 userResponse = Console.ReadLine()
+                If userResponse = "q" Then
+                    Exit Sub
 
-                If userResponse = "add" Or userResponse = "1" Then
-                    Console.WriteLine(vbNewLine & firstNumber & " + " & secondNumber & " = " & firstNumber + secondNumber)
+                ElseIf userResponse = "add" Or userResponse = "1" Then
+                Console.WriteLine(vbNewLine & firstNumber & " + " & secondNumber & " = " & firstNumber + secondNumber)
 
                 ElseIf userResponse = "subtract" Or userResponse = "2" Then
                     Console.WriteLine(vbNewLine & firstNumber & " - " & secondNumber & " = " & firstNumber - secondNumber)
