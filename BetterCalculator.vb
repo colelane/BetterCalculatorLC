@@ -16,7 +16,7 @@ Module BetterCalculator
         Dim goodData As Boolean
 
         Do
-            Console.WriteLine("Enter q at any time to exit" & vbNewLine)
+            Console.WriteLine("Please enter two numbers. Enter q at any time to exit" & vbNewLine)
             Do
                 Try
                     'The TryCatch is there to catch if any errors occur.  It 'tries' the inputs and if there is an error, the code moves to the catch area.
@@ -29,8 +29,14 @@ Module BetterCalculator
                     goodData = True
                 Catch ex As Exception
                     'exit must be added here after the exception. q is caught as an exception, then the if statement handles it.
-                    If firstInput = "q" Or secondInput = "q" Then Exit Sub
-                    Console.WriteLine("I asked for a number! Try again.")
+                    If firstInput = "q" Or secondInput = "q" Then
+                        Quit()
+                        Exit Sub
+                    End If
+
+
+                    Console.WriteLine("I asked for numbers! You entered: " _
+                    & firstInput & " " & "&" & " " & secondInput & ". Try again.")
                     goodData = False
                     'goodData is a flag.  If there is a catch, the program loops and tries again to make it through without an error.
                 End Try
@@ -46,6 +52,7 @@ Module BetterCalculator
                 'vbnewline is a carriage return or enter. moves to the next line.
                 userResponse = Console.ReadLine()
                 If userResponse = "q" Then
+                    Quit()
                     'could not put this in as an elseif, unsure why.
                     Exit Sub
 
@@ -89,6 +96,14 @@ Module BetterCalculator
         Loop
         'clears the console and starts over so the calculator can be used again.
 
+    End Sub
+
+    Sub Quit()
+        Console.WriteLine("You entered Q")
+        Console.WriteLine("Have a nice day!")
+        Console.WriteLine("Press enter to exit")
+        Console.ReadLine()
+        Exit Sub
     End Sub
 
 End Module
