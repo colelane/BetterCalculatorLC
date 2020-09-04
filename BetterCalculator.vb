@@ -5,7 +5,7 @@ Option Compare Text
 'Lane Coleman
 'RCET0265
 'Fall 2020
-'Simple Calculator
+'Better Caculator
 'https://github.com/colelane/BetterCalculatorLC.git
 
 Module BetterCalculator
@@ -19,7 +19,7 @@ Module BetterCalculator
             Console.WriteLine("Enter q at any time to exit" & vbNewLine)
             Do
                 Try
-                    'The TryCatch is there to catch if any errors occur.  it 'tries' the inputs and if there is an error, the code moves to the catch area.
+                    'The TryCatch is there to catch if any errors occur.  It 'tries' the inputs and if there is an error, the code moves to the catch area.
                     Console.WriteLine("Give me a number")
                     firstInput = Console.ReadLine()
                     firstNumber = CDbl(firstInput)
