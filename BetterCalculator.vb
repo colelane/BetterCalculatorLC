@@ -12,7 +12,7 @@ Module BetterCalculator
 
     Sub Main()
         Dim firstInput, secondInput, userResponse As String
-        Dim firstNumber, secondNumber As Integer
+        Dim firstNumber, secondNumber As Double
         Dim goodData As Boolean
 
         Do
@@ -22,10 +22,10 @@ Module BetterCalculator
                     'The TryCatch is there to catch if any errors occur.  it 'tries' the inputs and if there is an error, the code moves to the catch area.
                     Console.WriteLine("Give me a number")
                     firstInput = Console.ReadLine()
-                    firstNumber = CInt(firstInput)
+                    firstNumber = CDbl(firstInput)
                     Console.WriteLine("Give me another number")
                     secondInput = Console.ReadLine()
-                    secondNumber = CInt(secondInput)
+                    secondNumber = CDbl(secondInput)
                     goodData = True
                 Catch ex As Exception
                     'exit must be added here after the exception. q is caught as an exception, then the if statement handles it.
