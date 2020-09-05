@@ -103,7 +103,7 @@ Module BetterCalculator
         Console.WriteLine("Have a nice day!")
         Console.WriteLine("Press enter to exit")
         Console.ReadLine()
-        Exit Sub
+
     End Sub
 
 End Module
